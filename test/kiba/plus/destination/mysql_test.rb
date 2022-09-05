@@ -56,7 +56,7 @@ class Kiba::Plus::Destination::MysqlTest < Minitest::Test
 
     exception = assert_raises (Mysql2::Error) { @obj.write(row) }
 
-    assert_match %r{Duplicate entry '1' for key 'PRIMARY'}, exception.message
+    assert_match %r{Duplicate entry '1'}, exception.message
   end
 
   def test_close

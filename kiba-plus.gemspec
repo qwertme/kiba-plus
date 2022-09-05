@@ -33,6 +33,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.0"
   spec.add_development_dependency 'database_cleaner', '~> 1.5.3'
-  spec.add_development_dependency 'sequel', '~> 4.34'
+  spec.add_development_dependency 'sequel', '~> 5.0'
   spec.add_development_dependency 'pry'
 end
