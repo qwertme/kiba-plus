@@ -6,7 +6,6 @@ require 'kiba/plus'
 require 'sequel'
 require 'database_cleaner'
 require 'pry'
-require 'kiba-legacy-cli/legacy_parser'
 
 require 'fileutils'
 require 'tempfile'
@@ -61,7 +60,11 @@ module Minitest::MyPlugin
   def run_etl_content(etl_content)
     etl_path = make_etl_file etl_content
 
-    Kiba.run Kiba::LegacyParser.parse(etl_content, etl_path)
+    control = Kiba::Control.new
+    context = Kiba::Context.new(control)
+    context.instance_eval(*[etl_content, etl_path].compact)
+
+    Kiba.run control
   end
 
   def make_etl_file(etl_content)
