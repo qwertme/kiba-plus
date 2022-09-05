@@ -45,3 +45,4 @@ build/
 
 /test/pg_copy_tmp/*
 !/test/pg_copy_tmp/.keep
+tags
